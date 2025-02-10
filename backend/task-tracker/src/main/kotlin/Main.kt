@@ -1,5 +1,6 @@
 package com.kcubero27.backend.taskTracker
 
-fun main() {
-    println("Hello World!")
-}
+import com.github.ajalt.clikt.core.main
+import com.kcubero27.backend.taskTracker.infrastructure.entrypoint.cli.MainCommand
+
+fun main(args: Array<String>) = MainCommand().main(args)

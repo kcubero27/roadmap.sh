@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "2.1.10"
+    kotlin("plugin.serialization") version "2.1.0"
+    application
 }
 
 java {
@@ -23,6 +25,17 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+
+    implementation("com.github.ajalt.clikt:clikt:5.0.3")
+
+    // optional support for rendering markdown in help messages
+    implementation("com.github.ajalt.clikt:clikt-markdown:5.0.3")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+}
+
+application {
+    mainClass.set("com.kcubero27.backend.taskTracker.MainKt")
 }
 
 tasks.test {
